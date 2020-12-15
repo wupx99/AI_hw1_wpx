@@ -136,17 +136,9 @@ def main():
     # env = gym.make('Deterministic-8x8-FrozenLake-v0')
     env.render()
 
-    input('Hit enter to run policy iteration...')
-    start = time.time()
-    policy, value_func, num_policy_imp, num_value_iters = policy_iteration(env, gamma)
-    end = time.time()
-    print("Execute time", end - start)
-    # print_policy(policy, action_names)
-    # print_values(value_func)
-    print("The number of policy improvements: %d" % num_policy_imp)
-    print("The number of value iterations: %d" % num_value_iters)
-    # print(run_policy(env, gamma, policy))
-    plot_values(value_func)
+    input('Hit enter to run value iteration...')
+    values, num_value_iters = value_iteration(env, gamma)
+    plot_values(values)
 
 
 if __name__ == '__main__':
