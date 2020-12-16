@@ -47,8 +47,10 @@ class QueueEnv(Env):
 
     def __init__(self, p1, p2, p3):
         self.action_space = spaces.Discrete(4)
+        # self.observation_space = spaces.MultiDiscrete(
+        #     [(1, 3), (0, 5), (0, 5), (0, 5)])
         self.observation_space = spaces.MultiDiscrete(
-            [(1, 3), (0, 5), (0, 5), (0, 5)])
+            [3,5,5,5])
         self.nS = 3 * 6 * 6 * 6
         self.nA = 4
         self.p1 = p1

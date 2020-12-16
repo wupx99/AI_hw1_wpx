@@ -13,7 +13,7 @@ def main():
     input('Hit enter to run value iteration...')
     values, num_value_iters = value_iteration(env, gamma)
     policy = value_function_to_policy(env, gamma, values)
-    print_policy(policy, action_names)
+    print_policy(policy, action_names)  # 打印策略
 
 
 if __name__ == '__main__':
