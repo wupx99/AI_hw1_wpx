@@ -49,8 +49,8 @@ class QueueEnv(Env):
         self.action_space = spaces.Discrete(4)
         # self.observation_space = spaces.MultiDiscrete(
         #     [(1, 3), (0, 5), (0, 5), (0, 5)])
-        self.observation_space = spaces.MultiDiscrete(
-            [3,5,5,5])
+        # self.observation_space = spaces.MultiDiscrete(
+        #     [3, 5, 5, 5])
         self.nS = 3 * 6 * 6 * 6
         self.nA = 4
         self.p1 = p1
@@ -101,7 +101,7 @@ class QueueEnv(Env):
           state. debug_info is a dictionary. You can fill debug_info
           with any additional information you deem useful.
         """
-        # Action
+        # # Action
         # (cur, num1, num2, num3) = self.s
         # reward = 0
         # if action == self.SWITCH_TO_1:
@@ -135,7 +135,7 @@ class QueueEnv(Env):
         i = categorical_sample([t[0] for t in transitions], self.np_random)
         p, s, r, d = transitions[i]
         self.s = s
-        return (s, r, False, d)
+        return s, r, False, d
 
     def _render(self, mode='human', close=False):
         print(self.s)

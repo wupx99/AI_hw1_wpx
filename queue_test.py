@@ -11,9 +11,11 @@ import gym
 import AI_hw1.queue_envs as queue_envs
 
 if __name__ == "__main__":
-    env = gym.make('Queue-1-v0')
+    # env = gym.make('Queue-1-v0')
+    env = gym.make('Queue-2-v0')
     # print(env.query_model((0, 0, 0, 0), 1))
-    env.step(2)
+    env.step(1)
+    env.render('human')
     for i in range(100):
         env.step(3)
-        env.render()
+        env.render('human')
