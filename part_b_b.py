@@ -5,8 +5,8 @@ from rl_agent import *
 
 def main():
     gamma = 0.9
-    env = gym.make('Deterministic-4x4-FrozenLake-v0')
-    # env = gym.make('Deterministic-8x8-FrozenLake-v0')
+    # env = gym.make('Stochastic-4x4-FrozenLake-v0')
+    env = gym.make('Stochastic-8x8-FrozenLake-v0')
     env.render()
 
     input('Hit enter to run value iteration...')

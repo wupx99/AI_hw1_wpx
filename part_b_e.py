@@ -5,13 +5,15 @@ from rl_agent import *
 
 def main():
     gamma = 0.9
-    env = gym.make('Deterministic-4x4-FrozenLake-v0')
-    # env = gym.make('Deterministic-8x8-FrozenLake-v0')
+    env = gym.make('Stochastic-4x4-FrozenLake-v0')
+    # env = gym.make('Stochastic-8x8-FrozenLake-v0')
+    action_names = lake_env.action_names
     env.render()
 
     input('Hit enter to run value iteration...')
     values, num_value_iters = value_iteration(env, gamma)
-    plot_values(values)
+    policy = value_function_to_policy(env, gamma, values)
+    print_policy(policy, action_names)
 
 
 if __name__ == '__main__':

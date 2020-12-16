@@ -145,37 +145,21 @@ def main():
     # print_policy(policy, action_names)
     env.render()
 
-    # input('Hit enter to run policy iteration...')
+    # input('Hit enter to run value iteration...')
     # start = time.time()
-    # policy, value_func, num_policy_imp, num_value_iters = policy_iteration(env, gamma)
+    # values, num_value_iters = value_iteration(env, gamma)
+    # policy = value_function_to_policy(env, gamma, values)
     # end = time.time()
     # # print("Execute time", end - start)
     # # print_policy(policy, action_names)
-    # # print_values(value_func)
-    # # print("The number of policy improvements: %d" % num_policy_imp)
+    # print_values(values)
+    # # plot_values(values)
     # # print("The number of value iterations: %d" % num_value_iters)
-    # # print(run_policy(env, gamma, policy))
-    # plot_values(value_func)
-
-    input('Hit enter to run value iteration...')
-    start = time.time()
-    values, num_value_iters = value_iteration(env, gamma)
-    policy = value_function_to_policy(env, gamma, values)
-    end = time.time()
-    # print("Execute time", end - start)
-    # print_policy(policy, action_names)
-    print_values(values)
-    # plot_values(values)
-    # print("The number of value iterations: %d" % num_value_iters)
-    # total_reward = 0
-    # for i in range(100000):
-    #    reward, step = run_policy(env, gamma, policy)
-    #    total_reward += reward
-    # print(total_reward/100000)
-
-    reward, step = run_policy(env, gamma, policy)  # part a 第i小题
-    print("reward: ", reward)
-
+    # # total_reward = 0
+    # # for i in range(100000):
+    # #    reward, step = run_policy(env, gamma, policy)
+    # #    total_reward += reward
+    # # print(total_reward/100000)
     # print(value_func, num_policy_imp, num_value_iters)
     # values, i = evaluate_policy(env, gamma, policy, tol=10e-3)
     # print(values,i)
